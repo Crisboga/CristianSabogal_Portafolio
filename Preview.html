@@ -94,6 +94,7 @@
   .topnav .divider{ width:1px; height:30px; background:var(--line-dark); }
   .topnav .who b{ display:block; font-size:12.5px; letter-spacing:0.04em; color:#fff; font-weight:600; }
   .topnav .who span{ display:block; font-size:10.5px; letter-spacing:0.05em; color:var(--text-light-dim); margin-top:2px; }
+  .topnav-right{ display:flex; align-items:center; gap:28px; }
   .topnav-links{ display:flex; gap:34px; }
   .topnav-links a{
     font-size:13.5px; color:var(--text-light-dim); position:relative; padding-bottom:6px;
@@ -155,6 +156,16 @@
     .topnav{ padding:0 22px; }
     .topnav-links{ display:none; }
   }
+
+  .lang-toggle{
+    font-family:'Unbounded', sans-serif; font-size:12px; font-weight:700; color:var(--text-light-dim);
+    border:1px solid var(--line-dark); border-radius:100px; padding:7px 14px;
+    cursor:pointer; letter-spacing:0.03em;
+    transition:border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+  }
+  .lang-toggle:hover{ border-color:var(--accent-purple); color:#fff; background:rgba(168,85,247,0.1); }
+  #langToggle2{ border-color:var(--line-dark); color:var(--text-light-dim); }
+  #langToggle2:hover{ color:#fff; }
 
   main{ padding-top:84px; }
 
@@ -622,16 +633,19 @@
   <div class="brand">
     <button class="cs-btn" id="csBtn" aria-label="Abrir menú" aria-expanded="false">CS<span class="cs-chevron">›</span></button>
     <span class="divider"></span>
-    <span class="who"><b>CRISTIAN SABOGAL</b><span>DISEÑADOR SR. DE P.O.P.</span></span>
+    <span class="who"><b>CRISTIAN SABOGAL</b><span data-i18n="role">DISEÑADOR SR. DE P.O.P.</span></span>
   </div>
-  <nav class="topnav-links" id="sbNav">
-    <a href="#inicio" class="active">Inicio</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#ia">IA</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+  <div class="topnav-right">
+    <nav class="topnav-links" id="sbNav">
+      <a href="#inicio" class="active" data-i18n="nav_inicio">Inicio</a>
+      <a href="#sobre-mi" data-i18n="nav_sobre">Sobre mí</a>
+      <a href="#proyectos" data-i18n="nav_proyectos">Proyectos</a>
+      <a href="#ia" data-i18n="nav_ia">IA</a>
+      <a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a>
+      <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
+    </nav>
+    <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+  </div>
 </header>
 
 <div class="side-overlay" id="sideOverlay"></div>
@@ -641,17 +655,18 @@
     <button class="side-panel-close" id="sidePanelClose" aria-label="Cerrar menú">✕</button>
   </div>
   <nav id="sidePanelNav">
-    <a href="#inicio" class="active">Inicio</a>
-    <a href="#sobre-mi">Sobre mí</a>
-    <a href="#proyectos">Proyectos</a>
-    <a href="#ia">IA</a>
-    <a href="#habilidades">Habilidades</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#inicio" class="active" data-i18n="nav_inicio">Inicio</a>
+    <a href="#sobre-mi" data-i18n="nav_sobre">Sobre mí</a>
+    <a href="#proyectos" data-i18n="nav_proyectos">Proyectos</a>
+    <a href="#ia" data-i18n="nav_ia">IA</a>
+    <a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a>
+    <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
   </nav>
   <div class="side-panel-social">
     <a href="https://linkedin.com/in/cristian-camilo-sabogal" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
     <a href="#" aria-label="Instagram">◎</a>
     <a href="#" aria-label="Behance">Bē</a>
+    <button class="lang-toggle" id="langToggle2" aria-label="Switch language" style="margin-left:auto;">EN</button>
   </div>
 </aside>
 
@@ -662,33 +677,33 @@
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-text-col">
-          <div class="eyebrow">PORTAFOLIO</div>
-          <h1>Ideas que<br>se convierten en<br><span class="grad">experiencias.</span></h1>
-          <p>Diseñador Sr. de P.O.P. con más de 10 años de experiencia en el desarrollo de soluciones visuales que conectan marcas y personas, desde la idea hasta la producción.</p>
+          <div class="eyebrow" data-i18n="hero_eyebrow">PORTAFOLIO</div>
+          <h1 data-i18n="hero_h1">Ideas que<br>se convierten en<br><span class="grad">experiencias.</span></h1>
+          <p data-i18n="hero_p">Diseñador Sr. de P.O.P. con más de 10 años de experiencia en el desarrollo de soluciones visuales que conectan marcas y personas, desde la idea hasta la producción.</p>
 
           <div class="feat-row">
             <div class="feat-item">
               <div class="hex">🎯</div>
-              <div class="txt"><b>Diseño</b>Estratégico</div>
+              <div class="txt" data-i18n="feat1"><b>Diseño</b>Estratégico</div>
             </div>
             <div class="feat-item">
               <div class="hex">🏬</div>
-              <div class="txt"><b>Retail &amp;</b>P.O.P.</div>
+              <div class="txt" data-i18n="feat2"><b>Retail &amp;</b>P.O.P.</div>
             </div>
             <div class="feat-item">
               <div class="hex">⚙️</div>
-              <div class="txt"><b>Producción</b>y Acompañamiento</div>
+              <div class="txt" data-i18n="feat3"><b>Producción</b>y Acompañamiento</div>
             </div>
           </div>
 
           <div class="hero-cta">
-            <a href="#proyectos" class="btn btn-gradient-outline">Ver proyectos →</a>
+            <a href="#proyectos" class="btn btn-gradient-outline" data-i18n="ver_proyectos">Ver proyectos →</a>
           </div>
 
           <div class="hero-tagline">
-            <span class="u">CREATIVIDAD</span><span class="plus">+</span>
-            <span>ESTRATEGIA</span><span class="plus">+</span>
-            <span>RESULTADOS</span>
+            <span class="u" data-i18n="tag1">CREATIVIDAD</span><span class="plus">+</span>
+            <span data-i18n="tag2">ESTRATEGIA</span><span class="plus">+</span>
+            <span data-i18n="tag3">RESULTADOS</span>
           </div>
         </div>
 
@@ -701,16 +716,16 @@
 
           <div class="photo-slot">
             <div class="ic">📷</div>
-            <b>Foto aquí</b>
-            <span>Reemplaza este bloque por una foto tuya diseñando o de un proyecto instalado en punto de venta.</span>
+            <b data-i18n="photo_b">Foto aquí</b>
+            <span data-i18n="photo_span">Reemplaza este bloque por una foto tuya diseñando o de un proyecto instalado en punto de venta.</span>
           </div>
 
-          <span class="note-float">De la idea<br>a la realidad</span>
+          <span class="note-float" data-i18n="note_float">De la idea<br>a la realidad</span>
 
           <div class="glass-card exp">
-            <div class="tag">MI EXPERIENCIA</div>
-            <div class="big">10+ años</div>
-            <p>Creando experiencias de marca a través del diseño de P.O.P., retail y exhibiciones.</p>
+            <div class="tag" data-i18n="exp_tag">MI EXPERIENCIA</div>
+            <div class="big" data-i18n="exp_big">10+ años</div>
+            <p data-i18n="exp_desc">Creando experiencias de marca a través del diseño de P.O.P., retail y exhibiciones.</p>
           </div>
 
           <div class="glass-card brands">
@@ -719,7 +734,7 @@
             <div class="b-item">Tostao'</div>
             <div class="b-item">Bretaña</div>
             <div class="b-item">Smirnoff</div>
-            <a href="#proyectos" class="ver-mas">Ver más →</a>
+            <a href="#proyectos" class="ver-mas" data-i18n="ver_mas">Ver más →</a>
           </div>
         </div>
       </div>
@@ -731,13 +746,13 @@
     <div class="wrap about-grid">
 
       <div class="reveal">
-        <div class="eyebrow">SOBRE MÍ</div>
-        <div class="eyebrow-sm">MI PROPÓSITO</div>
-        <h2>Diseñar experiencias<br>que hacen marca.</h2>
-        <p>Soy Cristian Sabogal, diseñador industrial especializado en P.O.P. y retail. Combino creatividad, estrategia y funcionalidad para transformar ideas en espacios y piezas que conectan marcas con personas.</p>
+        <div class="eyebrow" data-i18n="about_eyebrow">SOBRE MÍ</div>
+        <div class="eyebrow-sm" data-i18n="about_eyebrow_sm">MI PROPÓSITO</div>
+        <h2 data-i18n="about_h2">Diseñar experiencias<br>que hacen marca.</h2>
+        <p data-i18n="about_p">Soy Cristian Sabogal, diseñador industrial especializado en P.O.P. y retail. Combino creatividad, estrategia y funcionalidad para transformar ideas en espacios y piezas que conectan marcas con personas.</p>
         <div class="signature-row">
           <span class="hand">Cristian Sabogal</span>
-          <a href="#proceso" class="btn btn-outline" style="padding:11px 20px; font-size:13px;">Conocer más →</a>
+          <a href="#proceso" class="btn btn-outline" style="padding:11px 20px; font-size:13px;" data-i18n="conocer_mas">Conocer más →</a>
         </div>
       </div>
 
@@ -747,36 +762,36 @@
           <!-- Reemplaza este div por tu foto real: añade la clase o estilo
                background-image:url('assets/perfil.jpg'); background-size:cover; -->
           <div class="ic">🙂</div>
-          <span>Tu foto aquí — círculo 220×220px</span>
+          <span data-i18n="profile_span">Tu foto aquí — círculo 220×220px</span>
         </div>
       </div>
 
       <div class="process-mini reveal" id="proceso">
-        <div class="eyebrow-sm">DE LA IDEA AL PUNTO DE VENTA</div>
-        <h2 style="font-size:20px; margin-bottom:0;">Mi proceso</h2>
+        <div class="eyebrow-sm" data-i18n="process_eyebrow_sm">DE LA IDEA AL PUNTO DE VENTA</div>
+        <h2 style="font-size:20px; margin-bottom:0;" data-i18n="process_h2">Mi proceso</h2>
         <div class="process-row">
           <div class="pstep">
             <div class="circ">01</div>
-            <h4>Brief</h4>
-            <p>Comprensión de necesidades y objetivos.</p>
+            <h4 data-i18n="step1_h">Brief</h4>
+            <p data-i18n="step1_p">Comprensión de necesidades y objetivos.</p>
           </div>
           <div class="pstep">
             <div class="circ">02</div>
-            <h4>Concepto</h4>
-            <p>Desarrollo de la idea y propuesta creativa.</p>
+            <h4 data-i18n="step2_h">Concepto</h4>
+            <p data-i18n="step2_p">Desarrollo de la idea y propuesta creativa.</p>
           </div>
           <div class="pstep">
             <div class="circ">03</div>
-            <h4>Diseño</h4>
-            <p>Modelado y visualización de la propuesta.</p>
+            <h4 data-i18n="step3_h">Diseño</h4>
+            <p data-i18n="step3_p">Modelado y visualización de la propuesta.</p>
           </div>
           <div class="pstep">
             <div class="circ">04</div>
-            <h4>Producción</h4>
-            <p>Materialización del proyecto.</p>
+            <h4 data-i18n="step4_h">Producción</h4>
+            <p data-i18n="step4_p">Materialización del proyecto.</p>
           </div>
         </div>
-        <a href="#habilidades" class="ver-proceso">Ver proceso completo →</a>
+        <a href="#habilidades" class="ver-proceso" data-i18n="ver_proceso">Ver proceso completo →</a>
       </div>
 
     </div>
@@ -788,8 +803,8 @@
       <div class="work-head reveal">
         <div>
           <div class="line"></div>
-          <h2>Fichas técnicas de proyectos</h2>
-          <p>Proyectos de diseño P.O.P. y retail desarrollados para marcas líderes de consumo masivo y del sector licorero. Haz clic en cualquiera para ver la ficha completa.</p>
+          <h2 data-i18n="work_h2">Fichas técnicas de proyectos</h2>
+          <p data-i18n="work_p">Proyectos de diseño P.O.P. y retail desarrollados para marcas líderes de consumo masivo y del sector licorero. Haz clic en cualquiera para ver la ficha completa.</p>
         </div>
         <div class="work-controls">
           <span class="wc-count" id="wcCount">25 proyectos</span>
@@ -825,33 +840,33 @@
     <div class="wrap">
       <div class="ai-head reveal">
         <div class="line"></div>
-        <h2>Explorando diseño + inteligencia artificial</h2>
-        <p>Además del P.O.P., actualmente estoy desarrollando tres aplicaciones que combinan mi criterio de diseño industrial con IA, para resolver problemas reales del día a día en producción y accesibilidad.</p>
+        <h2 data-i18n="ai_h2">Explorando diseño + inteligencia artificial</h2>
+        <p data-i18n="ai_p">Además del P.O.P., actualmente estoy desarrollando tres aplicaciones que combinan mi criterio de diseño industrial con IA, para resolver problemas reales del día a día en producción y accesibilidad.</p>
       </div>
       <div class="ai-grid reveal">
         <div class="ai-card">
           <div class="ic-wrap">🤟</div>
-          <div class="status"><span class="pulse"></span>EN DESARROLLO</div>
-          <h3>Lengua de señas a texto</h3>
-          <p>Aplicación móvil que traduce lenguaje de señas a texto escrito en tiempo real, pensada como herramienta de accesibilidad y comunicación inclusiva.</p>
+          <div class="status"><span class="pulse"></span><span data-i18n="ai_status">EN DESARROLLO</span></div>
+          <h3 data-i18n="ai1_h">Lengua de señas a texto</h3>
+          <p data-i18n="ai1_p">Aplicación móvil que traduce lenguaje de señas a texto escrito en tiempo real, pensada como herramienta de accesibilidad y comunicación inclusiva.</p>
         </div>
         <div class="ai-card">
           <div class="ic-wrap">📦</div>
-          <div class="status"><span class="pulse"></span>EN DESARROLLO</div>
-          <h3>Generador de cajas P.O.P.</h3>
-          <p>Herramienta que automatiza el desarrollo del plano de corte (dieline) para cajas y empaques de material P.O.P. a partir de las medidas del producto.</p>
+          <div class="status"><span class="pulse"></span><span data-i18n="ai_status">EN DESARROLLO</span></div>
+          <h3 data-i18n="ai2_h">Generador de cajas P.O.P.</h3>
+          <p data-i18n="ai2_p">Herramienta que automatiza el desarrollo del plano de corte (dieline) para cajas y empaques de material P.O.P. a partir de las medidas del producto.</p>
         </div>
         <div class="ai-card">
           <div class="ic-wrap">🧩</div>
-          <div class="status"><span class="pulse"></span>EN DESARROLLO</div>
-          <h3>Optimizador de corte en lámina</h3>
-          <p>Organiza automáticamente las piezas de un diseño dentro de una lámina de material, maximizando el aprovechamiento y reduciendo el desperdicio de producción.</p>
+          <div class="status"><span class="pulse"></span><span data-i18n="ai_status">EN DESARROLLO</span></div>
+          <h3 data-i18n="ai3_h">Optimizador de corte en lámina</h3>
+          <p data-i18n="ai3_p">Organiza automáticamente las piezas de un diseño dentro de una lámina de material, maximizando el aprovechamiento y reduciendo el desperdicio de producción.</p>
         </div>
         <div class="ai-card">
           <div class="ic-wrap">🎨</div>
-          <div class="status"><span class="pulse"></span>EN DESARROLLO</div>
-          <h3>Generador de presentaciones por cliente</h3>
-          <p>Crea presentaciones personalizadas para cada cliente a partir de un keyvisual de campaña, manteniendo la consistencia visual de marca en cada lámina.</p>
+          <div class="status"><span class="pulse"></span><span data-i18n="ai_status">EN DESARROLLO</span></div>
+          <h3 data-i18n="ai4_h">Generador de presentaciones por cliente</h3>
+          <p data-i18n="ai4_p">Crea presentaciones personalizadas para cada cliente a partir de un keyvisual de campaña, manteniendo la consistencia visual de marca en cada lámina.</p>
         </div>
       </div>
 
@@ -859,20 +874,20 @@
       <div class="evo reveal">
         <div class="evo-head">
           <div class="line" style="background:var(--accent-pink);"></div>
-          <h2>Este portafolio también es un proyecto de diseño</h2>
-          <p>La misma mentalidad de mejora continua que aplico en P.O.P. la usé aquí: pasé de una ficha técnica estática a una experiencia interactiva, con IA ayudándome a construirla.</p>
+          <h2 data-i18n="evo_h2">Este portafolio también es un proyecto de diseño</h2>
+          <p data-i18n="evo_p">La misma mentalidad de mejora continua que aplico en P.O.P. la usé aquí: pasé de una ficha técnica estática a una experiencia interactiva, con IA ayudándome a construirla.</p>
         </div>
         <div class="evo-grid">
           <div class="evo-col">
-            <span class="evo-tag before">ANTES</span>
-            <div class="evo-shot"><img src="assets/img/portfolio-antes.jpg" alt="Versión anterior del portafolio, estilo ficha técnica"></div>
-            <p class="evo-desc">Ficha técnica estática en negro y amarillo: un solo scroll, sin interacción, pensada para leerse una vez.</p>
+            <span class="evo-tag before" data-i18n="evo_before">ANTES</span>
+            <div class="evo-shot"><img src="assets/img/portfolio-antes.jpg" alt="Previous portfolio version, technical sheet style"></div>
+            <p class="evo-desc" data-i18n="evo_desc1">Ficha técnica estática en negro y amarillo: un solo scroll, sin interacción, pensada para leerse una vez.</p>
           </div>
           <div class="evo-arrow">→</div>
           <div class="evo-col">
-            <span class="evo-tag after">AHORA</span>
-            <div class="evo-shot"><img src="assets/img/portfolio-despues.jpg" alt="Versión renovada del portafolio, interactiva"></div>
-            <p class="evo-desc">Experiencia interactiva con galería filtrable, fichas de proyecto, panel de navegación y sección de proyectos de IA.</p>
+            <span class="evo-tag after" data-i18n="evo_after">AHORA</span>
+            <div class="evo-shot"><img src="assets/img/portfolio-despues.jpg" alt="Renewed portfolio version, interactive"></div>
+            <p class="evo-desc" data-i18n="evo_desc2">Experiencia interactiva con galería filtrable, fichas de proyecto, panel de navegación y sección de proyectos de IA.</p>
           </div>
         </div>
       </div>
@@ -883,20 +898,20 @@
   <section class="exp-banner" id="habilidades">
     <div class="wrap exp-grid">
       <div class="exp-text">
-        <h3>Experiencia y habilidades</h3>
-        <p>A lo largo de mi trayectoria he trabajado en proyectos de gran impacto, desarrollando soluciones de diseño en diferentes canales y formatos.</p>
-        <a href="#sobre-mi" class="btn btn-outline" style="border-color:var(--line-dark); color:#fff; padding:11px 20px; font-size:13px;">Ver mi trayectoria →</a>
+        <h3 data-i18n="exp_h3">Experiencia y habilidades</h3>
+        <p data-i18n="exp_p">A lo largo de mi trayectoria he trabajado en proyectos de gran impacto, desarrollando soluciones de diseño en diferentes canales y formatos.</p>
+        <a href="#sobre-mi" class="btn btn-outline" style="border-color:var(--line-dark); color:#fff; padding:11px 20px; font-size:13px;" data-i18n="exp_cta">Ver mi trayectoria →</a>
       </div>
       <div class="stats-row reveal">
-        <div class="stat-item"><div class="ic">⏱</div><b class="counter" data-target="10">0</b><span>+ años de experiencia</span></div>
-        <div class="stat-item"><div class="ic">◆</div><b>P.O.P.</b><span>Retail | Branding</span></div>
-        <div class="stat-item"><div class="ic">✎</div><b>Diseño</b><span>Gráfico y 3D</span></div>
-        <div class="stat-item"><div class="ic">⚙</div><b>Producción</b><span>Acompañamiento</span></div>
+        <div class="stat-item"><div class="ic">⏱</div><b class="counter" data-target="10">0</b><span data-i18n="stat1">+ años de experiencia</span></div>
+        <div class="stat-item"><div class="ic">◆</div><b>P.O.P.</b><span data-i18n="stat2">Retail | Branding</span></div>
+        <div class="stat-item"><div class="ic">✎</div><b data-i18n="stat3_b">Diseño</b><span data-i18n="stat3">Gráfico y 3D</span></div>
+        <div class="stat-item"><div class="ic">⚙</div><b data-i18n="stat4_b">Producción</b><span data-i18n="stat4">Acompañamiento</span></div>
       </div>
       <div class="cta-card reveal">
-        <p class="tag">¿Hablamos?</p>
-        <p class="msg">Estoy abierto a nuevos proyectos, colaboraciones y grandes ideas.</p>
-        <a href="#contacto" class="btn btn-dark">Contactar →</a>
+        <p class="tag" data-i18n="cta_tag">¿Hablamos?</p>
+        <p class="msg" data-i18n="cta_msg">Estoy abierto a nuevos proyectos, colaboraciones y grandes ideas.</p>
+        <a href="#contacto" class="btn btn-dark" data-i18n="cta_btn">Contactar →</a>
       </div>
     </div>
   </section>
@@ -904,10 +919,10 @@
   <!-- CONTACTO -->
   <section id="contacto" style="background:var(--bg-light-2); padding:90px 0; border-top:1px solid var(--line-light);">
     <div class="wrap reveal" style="max-width:640px;">
-      <div class="eyebrow" style="color:var(--accent-purple); font-weight:600; font-size:12px; margin-bottom:10px;">CONTACTO</div>
-      <h2 style="font-size:clamp(24px,3.5vw,34px); font-weight:600; margin-bottom:18px;">Escríbeme y hablemos de tu proyecto.</h2>
+      <div class="eyebrow" style="color:var(--accent-purple); font-weight:600; font-size:12px; margin-bottom:10px;" data-i18n="contact_eyebrow">CONTACTO</div>
+      <h2 style="font-size:clamp(24px,3.5vw,34px); font-weight:600; margin-bottom:18px;" data-i18n="contact_h2">Escríbeme y hablemos de tu proyecto.</h2>
       <p style="color:var(--text-dark-dim); font-size:15px; margin-bottom:30px; max-width:420px;">imcrisboga@gmail.com · 318 221 7577 · Bogotá, Colombia</p>
-      <a href="mailto:imcrisboga@gmail.com" class="btn btn-primary">Enviar un correo →</a>
+      <a href="mailto:imcrisboga@gmail.com" class="btn btn-primary" data-i18n="contact_btn">Enviar un correo →</a>
     </div>
   </section>
 
@@ -915,12 +930,12 @@
     <div class="wrap footer-row">
       <div class="f-logo">CS <span>CRISTIAN SABOGAL</span></div>
       <nav class="f-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#inicio" data-i18n="nav_inicio">Inicio</a>
+        <a href="#sobre-mi" data-i18n="nav_sobre">Sobre mí</a>
+        <a href="#proyectos" data-i18n="nav_proyectos">Proyectos</a>
+        <a href="#ia" data-i18n="nav_ia">IA</a>
+        <a href="#habilidades" data-i18n="nav_habilidades">Habilidades</a>
+        <a href="#contacto" data-i18n="nav_contacto">Contacto</a>
       </nav>
       <div class="f-right">
         <div class="f-social">
@@ -928,7 +943,7 @@
           <a href="#">◎</a>
           <a href="#">Bē</a>
         </div>
-        <span class="f-tags">Diseño · Estrategia · Resultados</span>
+        <span class="f-tags" data-i18n="f_tags">Diseño · Estrategia · Resultados</span>
       </div>
     </div>
   </footer>
@@ -936,6 +951,134 @@
 </main>
 
 <script>
+  // ---------------- IDIOMA / LANGUAGE ----------------
+  const I18N = {
+    es: {
+      role:"DISEÑADOR SR. DE P.O.P.",
+      nav_inicio:"Inicio", nav_sobre:"Sobre mí", nav_proyectos:"Proyectos", nav_ia:"IA", nav_habilidades:"Habilidades", nav_contacto:"Contacto",
+      hero_eyebrow:"PORTAFOLIO",
+      hero_h1:'Ideas que<br>se convierten en<br><span class="grad">experiencias.</span>',
+      hero_p:"Diseñador Sr. de P.O.P. con más de 10 años de experiencia en el desarrollo de soluciones visuales que conectan marcas y personas, desde la idea hasta la producción.",
+      feat1:'<b>Diseño</b>Estratégico', feat2:'<b>Retail &amp;</b>P.O.P.', feat3:'<b>Producción</b>y Acompañamiento',
+      ver_proyectos:"Ver proyectos →",
+      tag1:"CREATIVIDAD", tag2:"ESTRATEGIA", tag3:"RESULTADOS",
+      photo_b:"Foto aquí", photo_span:"Reemplaza este bloque por una foto tuya diseñando o de un proyecto instalado en punto de venta.",
+      note_float:"De la idea<br>a la realidad",
+      exp_tag:"MI EXPERIENCIA", exp_big:"10+ años", exp_desc:"Creando experiencias de marca a través del diseño de P.O.P., retail y exhibiciones.",
+      ver_mas:"Ver más →",
+      about_eyebrow:"SOBRE MÍ", about_eyebrow_sm:"MI PROPÓSITO",
+      about_h2:"Diseñar experiencias<br>que hacen marca.",
+      about_p:"Soy Cristian Sabogal, diseñador industrial especializado en P.O.P. y retail. Combino creatividad, estrategia y funcionalidad para transformar ideas en espacios y piezas que conectan marcas con personas.",
+      conocer_mas:"Conocer más →",
+      profile_span:"Tu foto aquí — círculo 220×220px",
+      process_eyebrow_sm:"DE LA IDEA AL PUNTO DE VENTA", process_h2:"Mi proceso",
+      step1_h:"Brief", step1_p:"Comprensión de necesidades y objetivos.",
+      step2_h:"Concepto", step2_p:"Desarrollo de la idea y propuesta creativa.",
+      step3_h:"Diseño", step3_p:"Modelado y visualización de la propuesta.",
+      step4_h:"Producción", step4_p:"Materialización del proyecto.",
+      ver_proceso:"Ver proceso completo →",
+      work_h2:"Fichas técnicas de proyectos",
+      work_p:"Proyectos de diseño P.O.P. y retail desarrollados para marcas líderes de consumo masivo y del sector licorero. Haz clic en cualquiera para ver la ficha completa.",
+      ai_h2:"Explorando diseño + inteligencia artificial",
+      ai_p:"Además del P.O.P., actualmente estoy desarrollando tres aplicaciones que combinan mi criterio de diseño industrial con IA, para resolver problemas reales del día a día en producción y accesibilidad.",
+      ai_status:"EN DESARROLLO",
+      ai1_h:"Lengua de señas a texto", ai1_p:"Aplicación móvil que traduce lenguaje de señas a texto escrito en tiempo real, pensada como herramienta de accesibilidad y comunicación inclusiva.",
+      ai2_h:"Generador de cajas P.O.P.", ai2_p:"Herramienta que automatiza el desarrollo del plano de corte (dieline) para cajas y empaques de material P.O.P. a partir de las medidas del producto.",
+      ai3_h:"Optimizador de corte en lámina", ai3_p:"Organiza automáticamente las piezas de un diseño dentro de una lámina de material, maximizando el aprovechamiento y reduciendo el desperdicio de producción.",
+      ai4_h:"Generador de presentaciones por cliente", ai4_p:"Crea presentaciones personalizadas para cada cliente a partir de un keyvisual de campaña, manteniendo la consistencia visual de marca en cada lámina.",
+      evo_h2:"Este portafolio también es un proyecto de diseño",
+      evo_p:"La misma mentalidad de mejora continua que aplico en P.O.P. la usé aquí: pasé de una ficha técnica estática a una experiencia interactiva, con IA ayudándome a construirla.",
+      evo_before:"ANTES", evo_after:"AHORA",
+      evo_desc1:"Ficha técnica estática en negro y amarillo: un solo scroll, sin interacción, pensada para leerse una vez.",
+      evo_desc2:"Experiencia interactiva con galería filtrable, fichas de proyecto, panel de navegación y sección de proyectos de IA.",
+      exp_h3:"Experiencia y habilidades",
+      exp_p:"A lo largo de mi trayectoria he trabajado en proyectos de gran impacto, desarrollando soluciones de diseño en diferentes canales y formatos.",
+      exp_cta:"Ver mi trayectoria →",
+      stat1:"+ años de experiencia", stat2:"Retail | Branding", stat3_b:"Diseño", stat3:"Gráfico y 3D", stat4_b:"Producción", stat4:"Acompañamiento",
+      cta_tag:"¿Hablamos?", cta_msg:"Estoy abierto a nuevos proyectos, colaboraciones y grandes ideas.", cta_btn:"Contactar →",
+      contact_eyebrow:"CONTACTO", contact_h2:"Escríbeme y hablemos de tu proyecto.", contact_btn:"Enviar un correo →",
+      f_tags:"Diseño · Estrategia · Resultados",
+    },
+    en: {
+      role:"SENIOR P.O.P. DESIGNER",
+      nav_inicio:"Home", nav_sobre:"About", nav_proyectos:"Projects", nav_ia:"AI", nav_habilidades:"Skills", nav_contacto:"Contact",
+      hero_eyebrow:"PORTFOLIO",
+      hero_h1:'Ideas that<br>become<br><span class="grad">experiences.</span>',
+      hero_p:"Senior P.O.P. Designer with over 10 years of experience building visual solutions that connect brands and people, from idea to production.",
+      feat1:'<b>Strategic</b>Design', feat2:'<b>Retail &amp;</b>P.O.P.', feat3:'<b>Production</b>Support',
+      ver_proyectos:"View projects →",
+      tag1:"CREATIVITY", tag2:"STRATEGY", tag3:"RESULTS",
+      photo_b:"Photo here", photo_span:"Replace this block with a photo of yourself designing, or of a project installed at the point of sale.",
+      note_float:"From idea<br>to reality",
+      exp_tag:"MY EXPERIENCE", exp_big:"10+ years", exp_desc:"Creating brand experiences through P.O.P., retail and display design.",
+      ver_mas:"See more →",
+      about_eyebrow:"ABOUT ME", about_eyebrow_sm:"MY PURPOSE",
+      about_h2:"Designing experiences<br>that build brands.",
+      about_p:"I'm Cristian Sabogal, an industrial designer specialized in P.O.P. and retail. I combine creativity, strategy and functionality to turn ideas into spaces and pieces that connect brands with people.",
+      conocer_mas:"Learn more →",
+      profile_span:"Your photo here — 220×220px circle",
+      process_eyebrow_sm:"FROM IDEA TO POINT OF SALE", process_h2:"My process",
+      step1_h:"Brief", step1_p:"Understanding needs and goals.",
+      step2_h:"Concept", step2_p:"Developing the idea and creative proposal.",
+      step3_h:"Design", step3_p:"3D modeling and visualization of the proposal.",
+      step4_h:"Production", step4_p:"Bringing the project to life.",
+      ver_proceso:"See full process →",
+      work_h2:"Project technical sheets",
+      work_p:"P.O.P. and retail design projects developed for leading mass-consumption and liquor-sector brands. Click any of them to see the full technical sheet.",
+      ai_h2:"Exploring design + artificial intelligence",
+      ai_p:"Beyond P.O.P., I'm currently developing three applications that combine my industrial design judgment with AI, to solve real day-to-day problems in production and accessibility.",
+      ai_status:"IN DEVELOPMENT",
+      ai1_h:"Sign language to text", ai1_p:"Mobile app that translates sign language into written text in real time, designed as an accessibility and inclusive-communication tool.",
+      ai2_h:"P.O.P. box generator", ai2_p:"Tool that automates the development of the cutting plan (dieline) for P.O.P. boxes and packaging based on product measurements.",
+      ai3_h:"Sheet-cutting optimizer", ai3_p:"Automatically arranges a design's pieces within a material sheet, maximizing material usage and reducing production waste.",
+      ai4_h:"Client presentation generator", ai4_p:"Creates personalized presentations for each client from a campaign keyvisual, keeping brand visual consistency across every slide.",
+      evo_h2:"This portfolio is a design project too",
+      evo_p:"I applied the same continuous-improvement mindset I use in P.O.P. here: I went from a static technical sheet to an interactive experience, with AI helping me build it.",
+      evo_before:"BEFORE", evo_after:"NOW",
+      evo_desc1:"Static black-and-yellow technical sheet: a single scroll, no interaction, meant to be read once.",
+      evo_desc2:"Interactive experience with a filterable gallery, project sheets, a navigation panel and an AI projects section.",
+      exp_h3:"Experience and skills",
+      exp_p:"Throughout my career I've worked on high-impact projects, developing design solutions across different channels and formats.",
+      exp_cta:"See my career path →",
+      stat1:"+ years of experience", stat2:"Retail | Branding", stat3_b:"Design", stat3:"Graphic & 3D", stat4_b:"Production", stat4:"Support",
+      cta_tag:"Let's talk?", cta_msg:"I'm open to new projects, collaborations and great ideas.", cta_btn:"Get in touch →",
+      contact_eyebrow:"CONTACT", contact_h2:"Write to me and let's talk about your project.", contact_btn:"Send an email →",
+      f_tags:"Design · Strategy · Results",
+    }
+  };
+
+  function detectInitialLang(){
+    const saved = localStorage.getItem('siteLang');
+    if(saved === 'es' || saved === 'en') return saved;
+    const nav = (navigator.language || 'es').toLowerCase();
+    return nav.startsWith('es') ? 'es' : 'en';
+  }
+
+  let currentLang = detectInitialLang();
+
+  function applyStaticI18n(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const dict = I18N[lang];
+      if(dict && dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    const toggles = [document.getElementById('langToggle'), document.getElementById('langToggle2')];
+    toggles.forEach(btn=>{ if(btn) btn.textContent = lang === 'es' ? 'EN' : 'ES'; });
+  }
+
+  function setLang(lang){
+    currentLang = lang;
+    localStorage.setItem('siteLang', lang);
+    applyStaticI18n(lang);
+    // Re-render dynamic project content (defined further below); guarded in case called before definition
+    if(typeof renderFilters === 'function') renderFilters();
+    if(typeof renderGrid === 'function') renderGrid();
+    if(typeof refreshModalText === 'function') refreshModalText();
+  }
+
+  applyStaticI18n(currentLang);
+
   // Active nav dot on scroll
   const sectionIds = ['inicio','sobre-mi','proyectos','ia','habilidades','contacto'];
   const navLinks = document.querySelectorAll('.topnav-links a, #sidePanelNav a');
@@ -1007,46 +1150,139 @@
     pdgBuchanan1: "assets/img/img-059.jpg", pdgBuchanan2: "assets/img/img-060.jpg",
   };
 
+  const CATS = {
+    ambientacion:{es:"Ambientación", en:"Environment"},
+    isla:{es:"Isla", en:"Island Display"},
+    m2:{es:"M2", en:"Floor Unit"},
+    vestido:{es:"Vestido", en:"Column Wrap"},
+    exhibidor:{es:"Exhibidor", en:"Wall Display"},
+    glorificador:{es:"Glorificador", en:"Glorifier"},
+    flanger:{es:"Flanger", en:"Flanger"},
+    aviso:{es:"Aviso", en:"Sign"},
+    delimitador:{es:"Delimitador", en:"Shelf Frame"},
+    botadero:{es:"Botadero", en:"Dump Bin"},
+    estandarte:{es:"Estandarte", en:"Standee"},
+    nicho:{es:"Nicho", en:"Niche Display"},
+    pdg:{es:"PDG", en:"End Cap"},
+  };
+  const UI_ALL = {es:"Todos", en:"All"};
+
   const PROJECTS = [
-    { code:"POP-01", title:"Ambientación Corona", brand:"Cerveza Corona", category:"Ambientación", materials:["Madera","Metal","Heno","Cabuya","Iluminación decorativa"], description:"Mueble de exhibición con tres caras de carga —dos en caliente y una en frío— diseñado para extender el territorio de marca \"This is Living\" dentro del punto de venta.\n\nEl reto era integrar refrigeración comercial y alta capacidad de carga en una sola estructura, sin perder la ambientación inmersiva tipo palapa de playa ni la fluidez de circulación del pasillo.\n\nLideré la traducción del concepto creativo a un plano técnico ejecutable en madera, vidrio templado e iluminación decorativa, y acompañé la fabricación e instalación final en tienda.", images:["corona1","corona2","corona3","corona4","corona5","corona6","corona7","corona8"] },
-    { code:"POP-02", title:"Mueble de Piso", brand:"Café Tostao", category:"Isla", materials:["Estructura metálica","PS impreso","Cenefa intercambiable"], description:"Las islas de café enfrentan un problema recurrente: el shopper no diferencia con facilidad origen y tueste entre referencias.\n\nResolví esto con entrepaños organizados en corrales de alambre, cenefas porta-precio intercambiables y un cabezote-glorificador que jerarquiza la categoría desde la distancia.\n\nDesarrollé el plano técnico de la estructura metálica y el vestido en PS impreso con los colores y gráfica de marca, coordinando ambos procesos con proveedores especializados hasta la entrega final.", images:["tostao","tostao2"] },
-    { code:"POP-03", title:"Mueble Regreso a Clases", brand:"Postobón", category:"M2", materials:["Estructura metálica","Madera","PS Impreso","Alambre"], description:"Mueble diseñado para activar el momento de regreso a clases con múltiples formatos del portafolio Postobón —botella, lata y fardo— en una sola base, sin saturar el espacio en piso.\n\nLa estructura metálica en tubería, vestida con la gráfica de campaña y cenefas porta-precio extruidas, está pensada para extender su vida útil más allá de esta campaña: basta con cambiar las gráficas para reutilizar el mismo mueble en futuras activaciones.", images:["postobon","postobon2"] },
-    { code:"POP-04", title:"Columna Bretaña", brand:"Bretaña", category:"Vestido", materials:["Metal","Acrílico","Neón Flex","Madera"], description:"El proyecto de mayor complejidad técnica del portafolio: convertir una columna estructural del punto de venta en un punto focal para el portafolio de mixers de tres marcas.\n\nExigió compatibilizar estructura metálica, malla, acrílico retroiluminado y cortina textil en un solo cuerpo, instalado alrededor de una columna existente sin alterarla.\n\nSe integró señalética de uso (\"elige, mezcla, disfruta\") que guía al shopper en el momento de compra, convirtiendo una pieza decorativa en una herramienta real de conversión.", images:["columna1","columna2","columna3"] },
-    { code:"POP-05", title:"Exhibidor de pared retroiluminado", brand:"Relx", category:"Exhibidor", materials:["Acrílico","Iluminación LED","Prototipado rápido"], description:"Exhibidor de pared en acrílico negro con iluminación LED perimetral, en el contorno y en cada entrepaño, diseñado para maximizar la visibilidad de la categoría en puntos de venta con poco protagonismo lumínico.\n\nIncorpora porta-precios rayables y divisiones impresas en prototipado rápido, pensadas para que el cliente actualice referencias sin alterar la estructura ni incurrir en nuevos costos de herramental.", images:["relx","relx2"] },
-    { code:"POP-06", title:"Glorificador de botella y lata", brand:"Budweiser", category:"Glorificador", materials:["Espectral impreso","Lámina C.R.","Iluminación LED","Vinilo"], description:"Glorificador para botella y lata elaborado en tubo cuadrado metálico y lámina C.R., con impresión en screen sobre espectral e iluminación LED interna.\n\nPensado como pieza de bajo costo y alto impacto visual para reforzar el mensaje de marca \"Greatness is yours to take\" justo en el momento de decisión de compra.", images:["gloriBud","gloriBud2"] },
-    { code:"POP-07", title:"Glorificador de lanzamiento", brand:"Ultrek", category:"Glorificador", materials:["Acrílico","Vinilo full color","Base termoformada"], description:"Glorificador elaborado en acrílico con vinilo impreso full color y base termoformada, diseñado para acompañar el lanzamiento de un nuevo lubricante dentro de la categoría automotriz.\n\nLa estructura liviana permite reubicarlo fácilmente entre puntos de venta durante la campaña de lanzamiento.", images:["gloriUltrek","gloriUltrek2"] },
-    { code:"POP-08", title:"Copa conmemorativa retroiluminada", brand:"Heineken · Champions League", category:"Aviso", materials:["ABS impreso 3D","Simulación de neón","Cinta LED"], description:"Copa elaborada en ABS mediante prototipado rápido, con iluminación LED y difusores en vinilo sobre espectral para simular un efecto neón.\n\nDiseñada como pieza de ambientación coleccionable para bares y puntos de consumo durante la temporada de Champions League, con soportes ojo de llave para montaje directo en pared.", images:["copa2","copa1"] },
-    { code:"POP-09", title:"Flanger retroiluminado intercambiable", brand:"Zenú · Ranchera", category:"Flanger", materials:["ABS impreso 3D","Neón flex","PS impreso"], description:"Flanger impreso en dos cuerpos con publicidad intercambiables por ambas caras y contorno en neón flex, pensado para que un mismo cuerpo sirva a varias marcas del portafolio sin duplicar herramental.\n\nLa paleta inyectada se fija a la pared mediante tornillo y chazo, simplificando la instalación en tienda.", images:["flanger","flanger2"] },
-    { code:"POP-10", title:"Hablador aéreo con dummy", brand:"Crem Helado", category:"Aviso", materials:["PS troquelado","Termoformado","Impresión full color"], description:"Hablador aéreo con dummy de tarro de helado, tapa termoformada y cuerpo troquelado en PS con impresión full color.\n\nDiseñado para colgar sobre el lineal y capturar la atención del shopper desde la distancia, reforzando el mensaje \"la vida sabe más rico\".", images:["hablador","hablador2"] },
-    { code:"POP-11", title:"Caja de emergencia retroiluminada", brand:"Aguardiente Antioqueño", category:"Glorificador", materials:["PS termodoblado","Espectral","Vinilo","Iluminación interna"], description:"Pieza conceptual elaborada en PS termodoblado con apliques en vinilo, puerta frontal en espectral termodoblado y soporte para botella, inspirada en el código visual de un botiquín de emergencia.\n\nLa iluminación interna y el mensaje \"romper en caso de emergencia\" buscan generar un momento memorable de marca en el anaquel.", images:["caja","caja2"] },
-    { code:"POP-12", title:"Marco delimitador extensible", brand:"Pietrán", category:"Delimitador", materials:["PS termodoblado","Impresión directa","Ajuste a medida"], description:"Marco desarrollado en PS termodoblado con impresión directa, dilatado en las esquinas superiores y extensible tanto a lo ancho como a lo alto mediante tornillo y mariposa.\n\nResuelve un problema típico de señalización en anaquel: un solo marco se ajusta a distintos formatos de góndola sin fabricar una pieza por cada medida.", images:["marco"] },
-    { code:"POP-13", title:"Aviso retroiluminado de barra", brand:"Club Colombia", category:"Glorificador", materials:["Madera","Acrílico dilatado","Iluminación LED","Vinilo corte dorado"], description:"Aviso para barra elaborado en madera con iluminación en el logo y marca, isotipo dilatado en acrílico e iluminado, y apliques en vinilo de corte dorado brush con arabescos de marca.\n\nPensado para puntos de consumo premium, donde la pieza debe sostener una presencia constante de marca en el mostrador.", images:["aviso"] },
-    { code:"POP-14", title:"Exhibidor de aditivos", brand:"Simoniz", category:"Isla", materials:["PE alta densidad","Vidrio","PS impreso","Cenefa intercambiable"], description:"Exhibidor para producto de aditivos elaborado en PE de alta densidad, con entrepaños y paredes en PS amarillo, vidrio en dos de sus caras y regletas para intercambiar cenefas según la referencia destacada.\n\nDiseñado para resistir manipulación constante en canal de talleres y autopartes.", images:["simoniz","simoniz2"] },
-    { code:"POP-15", title:"Cuadro temático retroiluminado", brand:"Budweiser · HardRock Café", category:"Ambientación", materials:["Madera","Marco metálico","Vidrio templado","Vinilo impreso"], description:"Cuadro elaborado en madera con marco en acabado metálico silver, fondo en color rojo y guitarra impresa en vinilo, haciendo alusión directa a la estética de HardRock Café.\n\nUna pieza puramente de ambientación, pensada para reforzar la presencia de marca en bares y restaurantes sin ocupar espacio de exhibición de producto.", images:["guitar"] },
-    { code:"POP-16", title:"Botadero Smirnoff Spicy Tamarind", brand:"Smirnoff", category:"Botadero", materials:["Estructura metálica","Madera","PS full color","Vinilo impreso"], description:"Botadero de piso para el lanzamiento de Smirnoff Spicy Tamarind, pensado para acumular alto volumen de producto en canal de autoservicios y tiendas de conveniencia sin perder impacto visual.\n\nEl cabezote retroiluminado con el logo de campaña funciona como faro de categoría desde los pasillos, mientras la base en lámina impresa full color resuelve el mensaje de marca en las cuatro caras del mueble.\n\nLideré la traducción del concepto gráfico a un plano técnico que permitiera fabricación rápida y despacho masivo a nivel nacional.", images:["botaderoSmirnoff1","botaderoSmirnoff2"] },
-    { code:"POP-17", title:"Estandarte Smirnoff Spicy Tamarind", brand:"Smirnoff", category:"Estandarte", materials:["Estructura metálica","Acrílico colores","PS impreso"], description:"Estandarte tipo tótem para exteriores e interiores de bares y tiendas, diseñado para extender la presencia de marca de Smirnoff Spicy Tamarind más allá del lineal.\n\nLa base desmontable en lámina metálica facilita el transporte y la instalación en punto de venta sin herramientas especiales, mientras el cuerpo retroiluminado mantiene visibilidad de marca incluso en horarios nocturnos.\n\nPieza pensada para rotar entre varios puntos de venta durante la misma campaña.", images:["estandarteSmirnoff1","estandarteSmirnoff2"] },
-    { code:"POP-18", title:"Exhibidor de piso Gatorade Zero", brand:"Gatorade", category:"Isla", materials:["PS impreso","Estructura metálica","Madera","Cenefa superior recortada"], description:"Exhibidor de piso en cuatro niveles para el lanzamiento de Gatorade Zero, diseñado para maximizar la carga de producto en pasillos de bebidas sin sacrificar estabilidad ni facilidad de reposición.\n\nLa cenefa superior recortada en la silueta de la botella y el mensaje \"De cero ganas a cero excusas\" jerarquizan la categoría desde la distancia, apoyando la estrategia de conversión en el momento de decisión de compra.\n\nDesarrollé el plano técnico de la estructura y coordiné la producción del vestido impreso con el proveedor.", images:["gatoradeZero1","gatoradeZero2"] },
-    { code:"POP-19", title:"Glorificador Buchanan's Piña", brand:"Buchanan's", category:"Glorificador", materials:["Estructura metálica","Acrílico retroiluminado","Madera","Impresión 3D"], description:"Glorificador para el lanzamiento de Buchanan's Piña, resuelto en arco metálico dorado con retroiluminación interior y un sello en relieve que replica el sello de la etiqueta de la marca.\n\nLa pieza integra soportes laterales para piñas decorativas y botella hero iluminada, reforzando el territorio \"Estamos en familia\" justo en el momento en que el shopper descubre la nueva referencia en el lineal de licores.\n\nAcompañé el desarrollo desde el render conceptual hasta la instalación final en punto de venta.", images:["gloriBuchanan1","gloriBuchanan2"] },
-    { code:"POP-20", title:"Mueble Bilac", brand:"Bilac", category:"M2", materials:["Estructura metálica","Madera","Espectral","PS impreso full color"], description:"Mueble de piso multiformato para leche saborizada Bilac, desarrollado en dos configuraciones —60x60 y M2— para adaptarse a distintos espacios de piso según el canal de venta.\n\nEntrepaños abiertos organizan el portafolio por presentación y sabor, mientras el vestido impreso full color con el mensaje \"Atrévete a probar\" mantiene consistencia de marca entre ambos formatos.\n\nDesarrollé el plano técnico de la estructura metálica base, común a las dos versiones, para optimizar costos de herramental.", images:["muebleBilac1","muebleBilac2","muebleBilac3","muebleBilac4"] },
-    { code:"POP-21", title:"Mueble HATSU", brand:"Hatsu", category:"Isla", materials:["Estructura metálica","PS impreso","Espectral arcoíris","Madera"], description:"Mueble de piso para el lanzamiento de la nueva botella de Hatsu, con entrepaños independientes que permiten exhibir por separado cada una de las referencias del portafolio.\n\nEl vestido gráfico en degradado de color y el cabezote iluminado con la marca refuerzan la identidad visual desde la distancia, apoyando el mensaje de renovación de empaque \"Nueva botella\".\n\nParticipé en la definición del plano técnico y en el seguimiento a la fabricación e instalación en tienda.", images:["muebleHatsu1","muebleHatsu2"] },
-    { code:"POP-22", title:"Mueble HIT", brand:"Hit", category:"Isla", materials:["Estructura metálica","Madera","Alambre","PS troquelado"], description:"Mueble de piso para el portafolio de jugos Hit, con repisas diferenciadas por sabor y un cabezote troquelado que replica el logo de la marca para captar la atención desde el pasillo.\n\nIncluye un soporte lateral para la botella hero de mayor formato, resolviendo en una sola pieza tanto la exhibición masiva de presentaciones pequeñas como el destaque del producto insignia.\n\nLideré el desarrollo técnico de la estructura y la coordinación con el proveedor de fabricación.", images:["muebleHit1","muebleHit2"] },
-    { code:"POP-23", title:"Mueble Mr. Tea", brand:"Mr. Tea", category:"Isla", materials:["Metal","Madera","Espectral","PP impreso full color"], description:"Mueble de piso con forma de empaque tetra litro, desarrollado para acompañar el lanzamiento del nuevo formato de Mr. Tea en sabores durazno y limón.\n\nLa silueta del mueble replica el envase para generar un efecto de \"producto gigante\" que se distingue de inmediato en el punto de venta, mientras los entrepaños internos organizan el producto por sabor.\n\nTrabajé el plano técnico de la estructura y el ajuste de la gráfica impresa a la forma tridimensional del mueble.", images:["muebleMrTea1","muebleMrTea2","muebleMrTea3"] },
-    { code:"POP-24", title:"Nicho retroiluminado Colcafé + Jet", brand:"Colcafé · Jet", category:"Nicho", materials:["Espectral termoformado","Iluminación LED interna","Acrílico","Vinilo impreso"], description:"Nicho retroiluminado para la activación conjunta \"Rompe el hielo\" entre Colcafé y Jet, que presenta el lanzamiento del granizado de café dentro de un espacio tridimensional que simula un bloque de hielo agrietado.\n\nLa iluminación LED interna y el vinilo impreso con textura de hielo generan un punto focal de alto impacto dentro del anaquel de café, diferenciando la categoría de bebidas frías del resto del lineal.\n\nDesarrollé la pieza desde el concepto tridimensional hasta la ficha técnica de producción.", images:["nichoColcafe1","nichoColcafe2","nichoColcafe3"] },
-    { code:"POP-25", title:"Punta de góndola Buchanan's Piña", brand:"Buchanan's", category:"PDG", materials:["Estructura metálica","Iluminación LED","Acrílico","Madera"], description:"Punta de góndola diseñado para acompañar el lanzamiento de Buchanan's Piña dentro del canal de licoreras y supermercados, integrando espacio de exhibición y momento de prueba de producto en una sola pieza.\n\nEl arco dorado iluminado y el mensaje \"Prueba la suavidad con sabor a piña\" guían al shopper desde la distancia hacia la base retroiluminada, donde se ubica la degustación.\n\nAcompañé el proyecto desde el render conceptual hasta la instalación en punto de venta, incluyendo ajustes de campo tras la primera implementación.", images:["pdgBuchanan1","pdgBuchanan2"] },
+    { code:"POP-01", catKey:"ambientacion", brand:"Cerveza Corona", images:["corona1","corona2","corona3","corona4","corona5","corona6","corona7","corona8"],
+      materials:{es:["Madera","Metal","Heno","Cabuya","Iluminación decorativa"], en:["Wood","Metal","Straw","Sisal rope","Decorative lighting"]},
+      es:{ title:"Ambientación Corona", description:"Mueble de exhibición con tres caras de carga —dos en caliente y una en frío— diseñado para extender el territorio de marca \"This is Living\" dentro del punto de venta.\n\nEl reto era integrar refrigeración comercial y alta capacidad de carga en una sola estructura, sin perder la ambientación inmersiva tipo palapa de playa ni la fluidez de circulación del pasillo.\n\nLideré la traducción del concepto creativo a un plano técnico ejecutable en madera, vidrio templado e iluminación decorativa, y acompañé la fabricación e instalación final en tienda." },
+      en:{ title:"Corona Brand Environment", description:"Display fixture with three loading faces —two ambient and one refrigerated— designed to extend the \"This is Living\" brand territory into the point of sale.\n\nThe challenge was integrating commercial refrigeration and high load capacity into a single structure, without losing the immersive beach-palapa atmosphere or the aisle's walking flow.\n\nI led the translation of the creative concept into an executable technical plan in wood, tempered glass and decorative lighting, and oversaw manufacturing and final in-store installation." } },
+    { code:"POP-02", catKey:"isla", brand:"Café Tostao", images:["tostao","tostao2"],
+      materials:{es:["Estructura metálica","PS impreso","Cenefa intercambiable"], en:["Metal structure","Printed PS","Interchangeable header"]},
+      es:{ title:"Mueble de Piso", description:"Las islas de café enfrentan un problema recurrente: el shopper no diferencia con facilidad origen y tueste entre referencias.\n\nResolví esto con entrepaños organizados en corrales de alambre, cenefas porta-precio intercambiables y un cabezote-glorificador que jerarquiza la categoría desde la distancia.\n\nDesarrollé el plano técnico de la estructura metálica y el vestido en PS impreso con los colores y gráfica de marca, coordinando ambos procesos con proveedores especializados hasta la entrega final." },
+      en:{ title:"Floor Display Unit", description:"Coffee islands face a recurring problem: shoppers struggle to tell origin and roast apart between SKUs.\n\nI solved this with shelves organized into wire corrals, interchangeable price-tag headers, and a glorifier top that hierarchizes the category from a distance.\n\nI developed the technical plan for the metal structure and the printed-PS wrap with brand colors and graphics, coordinating both processes with specialized suppliers through final delivery." } },
+    { code:"POP-03", catKey:"m2", brand:"Postobón", images:["postobon","postobon2"],
+      materials:{es:["Estructura metálica","Madera","PS Impreso","Alambre"], en:["Metal structure","Wood","Printed PS","Wire"]},
+      es:{ title:"Mueble Regreso a Clases", description:"Mueble diseñado para activar el momento de regreso a clases con múltiples formatos del portafolio Postobón —botella, lata y fardo— en una sola base, sin saturar el espacio en piso.\n\nLa estructura metálica en tubería, vestida con la gráfica de campaña y cenefas porta-precio extruidas, está pensada para extender su vida útil más allá de esta campaña: basta con cambiar las gráficas para reutilizar el mismo mueble en futuras activaciones." },
+      en:{ title:"Back-to-School Floor Unit", description:"Fixture designed to activate the back-to-school moment with multiple Postobón portfolio formats —bottle, can and multipack— on a single base, without overcrowding floor space.\n\nThe tubular metal structure, wrapped in campaign graphics with extruded price-tag headers, was built to outlive this one campaign: swapping the graphics is enough to reuse the same fixture in future activations." } },
+    { code:"POP-04", catKey:"vestido", brand:"Bretaña", images:["columna1","columna2","columna3"],
+      materials:{es:["Metal","Acrílico","Neón Flex","Madera"], en:["Metal","Acrylic","Flex neon","Wood"]},
+      es:{ title:"Columna Bretaña", description:"El proyecto de mayor complejidad técnica del portafolio: convertir una columna estructural del punto de venta en un punto focal para el portafolio de mixers de tres marcas.\n\nExigió compatibilizar estructura metálica, malla, acrílico retroiluminado y cortina textil en un solo cuerpo, instalado alrededor de una columna existente sin alterarla.\n\nSe integró señalética de uso (\"elige, mezcla, disfruta\") que guía al shopper en el momento de compra, convirtiendo una pieza decorativa en una herramienta real de conversión." },
+      en:{ title:"Bretaña Column Wrap", description:"The most technically complex project in the portfolio: turning a structural column at the point of sale into a focal point for a three-brand mixer portfolio.\n\nIt required reconciling metal structure, mesh, backlit acrylic and a fabric curtain into a single body, installed around an existing column without altering it.\n\nUsage signage (\"choose, mix, enjoy\") was integrated to guide the shopper at the moment of purchase, turning a decorative piece into a real conversion tool." } },
+    { code:"POP-05", catKey:"exhibidor", brand:"Relx", images:["relx","relx2"],
+      materials:{es:["Acrílico","Iluminación LED","Prototipado rápido"], en:["Acrylic","LED lighting","Rapid prototyping"]},
+      es:{ title:"Exhibidor de pared retroiluminado", description:"Exhibidor de pared en acrílico negro con iluminación LED perimetral, en el contorno y en cada entrepaño, diseñado para maximizar la visibilidad de la categoría en puntos de venta con poco protagonismo lumínico.\n\nIncorpora porta-precios rayables y divisiones impresas en prototipado rápido, pensadas para que el cliente actualice referencias sin alterar la estructura ni incurrir en nuevos costos de herramental." },
+      en:{ title:"Backlit Wall Display", description:"Black acrylic wall display with perimeter LED lighting, on the outline and on each shelf, designed to maximize category visibility in points of sale with little lighting presence of their own.\n\nIt includes scratch-off price tags and 3D-printed dividers, so the client can update SKUs without altering the structure or incurring new tooling costs." } },
+    { code:"POP-06", catKey:"glorificador", brand:"Budweiser", images:["gloriBud","gloriBud2"],
+      materials:{es:["Espectral impreso","Lámina C.R.","Iluminación LED","Vinilo"], en:["Printed Spectral","C.R. sheet metal","LED lighting","Vinyl"]},
+      es:{ title:"Glorificador de botella y lata", description:"Glorificador para botella y lata elaborado en tubo cuadrado metálico y lámina C.R., con impresión en screen sobre espectral e iluminación LED interna.\n\nPensado como pieza de bajo costo y alto impacto visual para reforzar el mensaje de marca \"Greatness is yours to take\" justo en el momento de decisión de compra." },
+      en:{ title:"Bottle & Can Glorifier", description:"Glorifier for bottle and can built in square metal tubing and C.R. sheet, with screen printing on Spectral board and internal LED lighting.\n\nConceived as a low-cost, high-visual-impact piece to reinforce the \"Greatness is yours to take\" brand message right at the moment of purchase decision." } },
+    { code:"POP-07", catKey:"glorificador", brand:"Ultrek", images:["gloriUltrek","gloriUltrek2"],
+      materials:{es:["Acrílico","Vinilo full color","Base termoformada"], en:["Acrylic","Full-color vinyl","Thermoformed base"]},
+      es:{ title:"Glorificador de lanzamiento", description:"Glorificador elaborado en acrílico con vinilo impreso full color y base termoformada, diseñado para acompañar el lanzamiento de un nuevo lubricante dentro de la categoría automotriz.\n\nLa estructura liviana permite reubicarlo fácilmente entre puntos de venta durante la campaña de lanzamiento." },
+      en:{ title:"Product-Launch Glorifier", description:"Glorifier built in acrylic with full-color printed vinyl and a thermoformed base, designed to support the launch of a new lubricant within the automotive category.\n\nThe lightweight structure makes it easy to relocate between points of sale during the launch campaign." } },
+    { code:"POP-08", catKey:"aviso", brand:"Heineken · Champions League", images:["copa2","copa1"],
+      materials:{es:["ABS impreso 3D","Simulación de neón","Cinta LED"], en:["3D-printed ABS","Simulated neon","LED strip"]},
+      es:{ title:"Copa conmemorativa retroiluminada", description:"Copa elaborada en ABS mediante prototipado rápido, con iluminación LED y difusores en vinilo sobre espectral para simular un efecto neón.\n\nDiseñada como pieza de ambientación coleccionable para bares y puntos de consumo durante la temporada de Champions League, con soportes ojo de llave para montaje directo en pared." },
+      en:{ title:"Backlit Commemorative Trophy", description:"Trophy built in ABS through rapid prototyping, with LED lighting and vinyl diffusers over Spectral board to simulate a neon effect.\n\nDesigned as a collectible ambiance piece for bars and consumption venues during Champions League season, with keyhole mounts for direct wall installation." } },
+    { code:"POP-09", catKey:"flanger", brand:"Zenú · Ranchera", images:["flanger","flanger2"],
+      materials:{es:["ABS impreso 3D","Neón flex","PS impreso"], en:["3D-printed ABS","Flex neon","Printed PS"]},
+      es:{ title:"Flanger retroiluminado intercambiable", description:"Flanger impreso en dos cuerpos con publicidad intercambiables por ambas caras y contorno en neón flex, pensado para que un mismo cuerpo sirva a varias marcas del portafolio sin duplicar herramental.\n\nLa paleta inyectada se fija a la pared mediante tornillo y chazo, simplificando la instalación en tienda." },
+      en:{ title:"Interchangeable Backlit Flanger", description:"Flanger printed in two interchangeable double-sided bodies with a flex-neon outline, designed so a single body can serve several portfolio brands without duplicating tooling.\n\nThe injected mounting plate attaches to the wall with screw and anchor, simplifying in-store installation." } },
+    { code:"POP-10", catKey:"aviso", brand:"Crem Helado", images:["hablador","hablador2"],
+      materials:{es:["PS troquelado","Termoformado","Impresión full color"], en:["Die-cut PS","Thermoforming","Full-color printing"]},
+      es:{ title:"Hablador aéreo con dummy", description:"Hablador aéreo con dummy de tarro de helado, tapa termoformada y cuerpo troquelado en PS con impresión full color.\n\nDiseñado para colgar sobre el lineal y capturar la atención del shopper desde la distancia, reforzando el mensaje \"la vida sabe más rico\"." },
+      en:{ title:"Hanging Sign with Dummy", description:"Hanging sign with an ice-cream tub dummy, thermoformed lid and die-cut PS body with full-color printing.\n\nDesigned to hang above the shelf and catch the shopper's attention from a distance, reinforcing the \"life tastes better\" message." } },
+    { code:"POP-11", catKey:"glorificador", brand:"Aguardiente Antioqueño", images:["caja","caja2"],
+      materials:{es:["PS termodoblado","Espectral","Vinilo","Iluminación interna"], en:["Bent PS","Spectral board","Vinyl","Internal lighting"]},
+      es:{ title:"Caja de emergencia retroiluminada", description:"Pieza conceptual elaborada en PS termodoblado con apliques en vinilo, puerta frontal en espectral termodoblado y soporte para botella, inspirada en el código visual de un botiquín de emergencia.\n\nLa iluminación interna y el mensaje \"romper en caso de emergencia\" buscan generar un momento memorable de marca en el anaquel." },
+      en:{ title:"Backlit Emergency Case", description:"Conceptual piece built in bent PS with vinyl appliqués, a bent-Spectral front door and a bottle holder, inspired by the visual code of an emergency first-aid box.\n\nThe internal lighting and the \"break in case of emergency\" message aim to create a memorable brand moment on the shelf." } },
+    { code:"POP-12", catKey:"delimitador", brand:"Pietrán", images:["marco"],
+      materials:{es:["PS termodoblado","Impresión directa","Ajuste a medida"], en:["Bent PS","Direct printing","Custom-fit adjustment"]},
+      es:{ title:"Marco delimitador extensible", description:"Marco desarrollado en PS termodoblado con impresión directa, dilatado en las esquinas superiores y extensible tanto a lo ancho como a lo alto mediante tornillo y mariposa.\n\nResuelve un problema típico de señalización en anaquel: un solo marco se ajusta a distintos formatos de góndola sin fabricar una pieza por cada medida." },
+      en:{ title:"Extendable Shelf Frame", description:"Frame developed in bent PS with direct printing, dilated at the upper corners and extendable both in width and height via wing-nut screws.\n\nIt solves a typical shelf-signage problem: a single frame adjusts to different gondola formats without manufacturing one piece per size." } },
+    { code:"POP-13", catKey:"glorificador", brand:"Club Colombia", images:["aviso"],
+      materials:{es:["Madera","Acrílico dilatado","Iluminación LED","Vinilo corte dorado"], en:["Wood","Routed acrylic","LED lighting","Gold cut vinyl"]},
+      es:{ title:"Aviso retroiluminado de barra", description:"Aviso para barra elaborado en madera con iluminación en el logo y marca, isotipo dilatado en acrílico e iluminado, y apliques en vinilo de corte dorado brush con arabescos de marca.\n\nPensado para puntos de consumo premium, donde la pieza debe sostener una presencia constante de marca en el mostrador." },
+      en:{ title:"Backlit Bar Sign", description:"Bar sign built in wood with illuminated logo and brand mark, a routed and backlit acrylic isotype, and brushed gold cut-vinyl appliqués with brand arabesques.\n\nDesigned for premium consumption venues, where the piece must sustain a constant brand presence on the counter." } },
+    { code:"POP-14", catKey:"isla", brand:"Simoniz", images:["simoniz","simoniz2"],
+      materials:{es:["PE alta densidad","Vidrio","PS impreso","Cenefa intercambiable"], en:["High-density PE","Glass","Printed PS","Interchangeable header"]},
+      es:{ title:"Exhibidor de aditivos", description:"Exhibidor para producto de aditivos elaborado en PE de alta densidad, con entrepaños y paredes en PS amarillo, vidrio en dos de sus caras y regletas para intercambiar cenefas según la referencia destacada.\n\nDiseñado para resistir manipulación constante en canal de talleres y autopartes." },
+      en:{ title:"Additives Display", description:"Display for additive products built in high-density PE, with shelves and walls in yellow PS, glass on two of its faces, and rails for swapping headers depending on the featured SKU.\n\nDesigned to withstand constant handling in the auto-shop and auto-parts channel." } },
+    { code:"POP-15", catKey:"ambientacion", brand:"Budweiser · HardRock Café", images:["guitar"],
+      materials:{es:["Madera","Marco metálico","Vidrio templado","Vinilo impreso"], en:["Wood","Metal frame","Tempered glass","Printed vinyl"]},
+      es:{ title:"Cuadro temático retroiluminado", description:"Cuadro elaborado en madera con marco en acabado metálico silver, fondo en color rojo y guitarra impresa en vinilo, haciendo alusión directa a la estética de HardRock Café.\n\nUna pieza puramente de ambientación, pensada para reforzar la presencia de marca en bares y restaurantes sin ocupar espacio de exhibición de producto." },
+      en:{ title:"Backlit Themed Wall Frame", description:"Wood-built frame with a silver metallic finish, red background and a vinyl-printed guitar, directly referencing HardRock Café's visual identity.\n\nA purely ambiance piece, designed to reinforce brand presence in bars and restaurants without taking up product-display space." } },
+    { code:"POP-16", catKey:"botadero", brand:"Smirnoff", images:["botaderoSmirnoff1","botaderoSmirnoff2"],
+      materials:{es:["Estructura metálica","Madera","PS full color","Vinilo impreso"], en:["Metal structure","Wood","Full-color PS","Printed vinyl"]},
+      es:{ title:"Botadero Smirnoff Spicy Tamarind", description:"Botadero de piso para el lanzamiento de Smirnoff Spicy Tamarind, pensado para acumular alto volumen de producto en canal de autoservicios y tiendas de conveniencia sin perder impacto visual.\n\nEl cabezote retroiluminado con el logo de campaña funciona como faro de categoría desde los pasillos, mientras la base en lámina impresa full color resuelve el mensaje de marca en las cuatro caras del mueble.\n\nLideré la traducción del concepto gráfico a un plano técnico que permitiera fabricación rápida y despacho masivo a nivel nacional." },
+      en:{ title:"Smirnoff Spicy Tamarind Dump Bin", description:"Floor dump bin for the Smirnoff Spicy Tamarind launch, built to hold a high volume of product in self-service and convenience-store channels without losing visual impact.\n\nThe backlit header with the campaign logo acts as a category beacon from the aisles, while the full-color printed base carries the brand message on all four faces of the fixture.\n\nI led the translation of the graphic concept into a technical plan that allowed for fast manufacturing and nationwide mass rollout." } },
+    { code:"POP-17", catKey:"estandarte", brand:"Smirnoff", images:["estandarteSmirnoff1","estandarteSmirnoff2"],
+      materials:{es:["Estructura metálica","Acrílico colores","PS impreso"], en:["Metal structure","Colored acrylic","Printed PS"]},
+      es:{ title:"Estandarte Smirnoff Spicy Tamarind", description:"Estandarte tipo tótem para exteriores e interiores de bares y tiendas, diseñado para extender la presencia de marca de Smirnoff Spicy Tamarind más allá del lineal.\n\nLa base desmontable en lámina metálica facilita el transporte y la instalación en punto de venta sin herramientas especiales, mientras el cuerpo retroiluminado mantiene visibilidad de marca incluso en horarios nocturnos.\n\nPieza pensada para rotar entre varios puntos de venta durante la misma campaña." },
+      en:{ title:"Smirnoff Spicy Tamarind Standee", description:"Totem-style standee for outdoor and indoor use in bars and stores, designed to extend Smirnoff Spicy Tamarind's brand presence beyond the shelf.\n\nThe demountable sheet-metal base makes transport and in-store installation easy without special tools, while the backlit body keeps the brand visible even at night.\n\nA piece designed to rotate between several points of sale during the same campaign." } },
+    { code:"POP-18", catKey:"isla", brand:"Gatorade", images:["gatoradeZero1","gatoradeZero2"],
+      materials:{es:["PS impreso","Estructura metálica","Madera","Cenefa superior recortada"], en:["Printed PS","Metal structure","Wood","Die-cut top header"]},
+      es:{ title:"Exhibidor de piso Gatorade Zero", description:"Exhibidor de piso en cuatro niveles para el lanzamiento de Gatorade Zero, diseñado para maximizar la carga de producto en pasillos de bebidas sin sacrificar estabilidad ni facilidad de reposición.\n\nLa cenefa superior recortada en la silueta de la botella y el mensaje \"De cero ganas a cero excusas\" jerarquizan la categoría desde la distancia, apoyando la estrategia de conversión en el momento de decisión de compra.\n\nDesarrollé el plano técnico de la estructura y coordiné la producción del vestido impreso con el proveedor." },
+      en:{ title:"Gatorade Zero Floor Display", description:"Four-tier floor display for the Gatorade Zero launch, designed to maximize product load in beverage aisles without sacrificing stability or ease of restocking.\n\nThe top header, die-cut into the bottle's silhouette, and the \"Zero excuses, zero limits\" message hierarchize the category from a distance, supporting the conversion strategy at the purchase-decision moment.\n\nI developed the technical plan for the structure and coordinated production of the printed wrap with the supplier." } },
+    { code:"POP-19", catKey:"glorificador", brand:"Buchanan's", images:["gloriBuchanan1","gloriBuchanan2"],
+      materials:{es:["Estructura metálica","Acrílico retroiluminado","Madera","Impresión 3D"], en:["Metal structure","Backlit acrylic","Wood","3D printing"]},
+      es:{ title:"Glorificador Buchanan's Piña", description:"Glorificador para el lanzamiento de Buchanan's Piña, resuelto en arco metálico dorado con retroiluminación interior y un sello en relieve que replica el sello de la etiqueta de la marca.\n\nLa pieza integra soportes laterales para piñas decorativas y botella hero iluminada, reforzando el territorio \"Estamos en familia\" justo en el momento en que el shopper descubre la nueva referencia en el lineal de licores.\n\nAcompañé el desarrollo desde el render conceptual hasta la instalación final en punto de venta." },
+      en:{ title:"Buchanan's Piña Glorifier", description:"Glorifier for the Buchanan's Piña launch, built as a golden metal arch with internal backlighting and an embossed seal that replicates the brand's label seal.\n\nThe piece integrates side supports for decorative pineapples and an illuminated hero bottle, reinforcing the \"We are family\" territory right at the moment the shopper discovers the new SKU on the liquor shelf.\n\nI was involved from the conceptual render through to final in-store installation." } },
+    { code:"POP-20", catKey:"m2", brand:"Bilac", images:["muebleBilac1","muebleBilac2","muebleBilac3","muebleBilac4"],
+      materials:{es:["Estructura metálica","Madera","Espectral","PS impreso full color"], en:["Metal structure","Wood","Spectral board","Full-color printed PS"]},
+      es:{ title:"Mueble Bilac", description:"Mueble de piso multiformato para leche saborizada Bilac, desarrollado en dos configuraciones —60x60 y M2— para adaptarse a distintos espacios de piso según el canal de venta.\n\nEntrepaños abiertos organizan el portafolio por presentación y sabor, mientras el vestido impreso full color con el mensaje \"Atrévete a probar\" mantiene consistencia de marca entre ambos formatos.\n\nDesarrollé el plano técnico de la estructura metálica base, común a las dos versiones, para optimizar costos de herramental." },
+      en:{ title:"Bilac Floor Unit", description:"Multi-format floor unit for Bilac flavored milk, developed in two configurations —60x60 and M2— to adapt to different floor spaces depending on the sales channel.\n\nOpen shelves organize the portfolio by pack size and flavor, while the full-color printed wrap with the \"Dare to try it\" message keeps brand consistency across both formats.\n\nI developed the technical plan for the base metal structure shared by both versions, to optimize tooling costs." } },
+    { code:"POP-21", catKey:"isla", brand:"Hatsu", images:["muebleHatsu1","muebleHatsu2"],
+      materials:{es:["Estructura metálica","PS impreso","Espectral arcoíris","Madera"], en:["Metal structure","Printed PS","Rainbow Spectral board","Wood"]},
+      es:{ title:"Mueble HATSU", description:"Mueble de piso para el lanzamiento de la nueva botella de Hatsu, con entrepaños independientes que permiten exhibir por separado cada una de las referencias del portafolio.\n\nEl vestido gráfico en degradado de color y el cabezote iluminado con la marca refuerzan la identidad visual desde la distancia, apoyando el mensaje de renovación de empaque \"Nueva botella\".\n\nParticipé en la definición del plano técnico y en el seguimiento a la fabricación e instalación en tienda." },
+      en:{ title:"HATSU Floor Unit", description:"Floor unit for the launch of Hatsu's new bottle, with independent shelves that allow each portfolio SKU to be displayed separately.\n\nThe color-gradient graphic wrap and the illuminated branded header reinforce visual identity from a distance, supporting the \"New bottle\" packaging-renewal message.\n\nI took part in defining the technical plan and in following up on manufacturing and in-store installation." } },
+    { code:"POP-22", catKey:"isla", brand:"Hit", images:["muebleHit1","muebleHit2"],
+      materials:{es:["Estructura metálica","Madera","Alambre","PS troquelado"], en:["Metal structure","Wood","Wire","Die-cut PS"]},
+      es:{ title:"Mueble HIT", description:"Mueble de piso para el portafolio de jugos Hit, con repisas diferenciadas por sabor y un cabezote troquelado que replica el logo de la marca para captar la atención desde el pasillo.\n\nIncluye un soporte lateral para la botella hero de mayor formato, resolviendo en una sola pieza tanto la exhibición masiva de presentaciones pequeñas como el destaque del producto insignia.\n\nLideré el desarrollo técnico de la estructura y la coordinación con el proveedor de fabricación." },
+      en:{ title:"HIT Floor Unit", description:"Floor unit for the Hit juice portfolio, with shelves differentiated by flavor and a die-cut header that replicates the brand logo to catch attention from the aisle.\n\nIt includes a side holder for the larger-format hero bottle, solving both mass display of small packs and the spotlight on the flagship product in a single piece.\n\nI led the technical development of the structure and coordination with the manufacturing supplier." } },
+    { code:"POP-23", catKey:"isla", brand:"Mr. Tea", images:["muebleMrTea1","muebleMrTea2","muebleMrTea3"],
+      materials:{es:["Metal","Madera","Espectral","PP impreso full color"], en:["Metal","Wood","Spectral board","Full-color printed PP"]},
+      es:{ title:"Mueble Mr. Tea", description:"Mueble de piso con forma de empaque tetra litro, desarrollado para acompañar el lanzamiento del nuevo formato de Mr. Tea en sabores durazno y limón.\n\nLa silueta del mueble replica el envase para generar un efecto de \"producto gigante\" que se distingue de inmediato en el punto de venta, mientras los entrepaños internos organizan el producto por sabor.\n\nTrabajé el plano técnico de la estructura y el ajuste de la gráfica impresa a la forma tridimensional del mueble." },
+      en:{ title:"Mr. Tea Floor Unit", description:"Floor unit shaped like a tetra-pack carton, developed to support the launch of Mr. Tea's new format in peach and lemon flavors.\n\nThe fixture's silhouette replicates the carton to create a \"giant product\" effect that stands out immediately at the point of sale, while internal shelves organize product by flavor.\n\nI worked on the technical plan for the structure and on fitting the printed graphics to the fixture's three-dimensional shape." } },
+    { code:"POP-24", catKey:"nicho", brand:"Colcafé · Jet", images:["nichoColcafe1","nichoColcafe2","nichoColcafe3"],
+      materials:{es:["Espectral termoformado","Iluminación LED interna","Acrílico","Vinilo impreso"], en:["Thermoformed Spectral","Internal LED lighting","Acrylic","Printed vinyl"]},
+      es:{ title:"Nicho retroiluminado Colcafé + Jet", description:"Nicho retroiluminado para la activación conjunta \"Rompe el hielo\" entre Colcafé y Jet, que presenta el lanzamiento del granizado de café dentro de un espacio tridimensional que simula un bloque de hielo agrietado.\n\nLa iluminación LED interna y el vinilo impreso con textura de hielo generan un punto focal de alto impacto dentro del anaquel de café, diferenciando la categoría de bebidas frías del resto del lineal.\n\nDesarrollé la pieza desde el concepto tridimensional hasta la ficha técnica de producción." },
+      en:{ title:"Colcafé + Jet Backlit Niche", description:"Backlit niche for the joint \"Break the ice\" activation between Colcafé and Jet, presenting the launch of their coffee slushie inside a three-dimensional space that simulates a cracked ice block.\n\nThe internal LED lighting and the ice-textured printed vinyl create a high-impact focal point within the coffee shelf, setting the cold-beverage category apart from the rest of the aisle.\n\nI developed the piece from the three-dimensional concept through to the production technical sheet." } },
+    { code:"POP-25", catKey:"pdg", brand:"Buchanan's", images:["pdgBuchanan1","pdgBuchanan2"],
+      materials:{es:["Estructura metálica","Iluminación LED","Acrílico","Madera"], en:["Metal structure","LED lighting","Acrylic","Wood"]},
+      es:{ title:"Punta de góndola Buchanan's Piña", description:"Punta de góndola diseñado para acompañar el lanzamiento de Buchanan's Piña dentro del canal de licoreras y supermercados, integrando espacio de exhibición y momento de prueba de producto en una sola pieza.\n\nEl arco dorado iluminado y el mensaje \"Prueba la suavidad con sabor a piña\" guían al shopper desde la distancia hacia la base retroiluminada, donde se ubica la degustación.\n\nAcompañé el proyecto desde el render conceptual hasta la instalación en punto de venta, incluyendo ajustes de campo tras la primera implementación." },
+      en:{ title:"Buchanan's Piña End Cap", description:"End-cap display designed to support the Buchanan's Piña launch across the liquor-store and supermarket channel, integrating display space and a product-tasting moment in a single piece.\n\nThe illuminated golden arch and the \"Try the smoothness with pineapple flavor\" message guide the shopper from a distance toward the backlit base, where the tasting takes place.\n\nI was involved in the project from the conceptual render through to in-store installation, including field adjustments after the first rollout." } },
   ];
 
-  // ---------------- RENDER GRID + FILTROS ----------------
+  // ---------------- RENDER GRID + FILTROS (consciente del idioma) ----------------
   const workRow = document.getElementById('workRow');
   const filtersEl = document.getElementById('filters');
   const wcCount = document.getElementById('wcCount');
-  const categories = ["Todos", ...new Set(PROJECTS.map(p=>p.category))];
+  const catKeys = ["Todos", ...new Set(PROJECTS.map(p=>p.catKey))];
   let activeCat = "Todos";
 
   function imgSrc(key){ return IMG[key] || IMG.tostao; }
+  function catLabel(catKey){ return catKey === "Todos" ? UI_ALL[currentLang] : CATS[catKey][currentLang]; }
 
   function renderFilters(){
-    filtersEl.innerHTML = categories.map(c =>
-      `<button class="filter-chip ${c===activeCat?'active':''}" data-cat="${c}">${c}</button>`
+    filtersEl.innerHTML = catKeys.map(c =>
+      `<button class="filter-chip ${c===activeCat?'active':''}" data-cat="${c}">${catLabel(c)}</button>`
     ).join('');
     filtersEl.querySelectorAll('.filter-chip').forEach(btn=>{
       btn.addEventListener('click', ()=>{ activeCat = btn.dataset.cat; renderFilters(); renderGrid(); });
@@ -1054,15 +1290,17 @@
   }
 
   function renderGrid(){
-    const list = activeCat === "Todos" ? PROJECTS : PROJECTS.filter(p=>p.category===activeCat);
-    wcCount.textContent = list.length + (list.length===1 ? ' proyecto' : ' proyectos');
+    const list = activeCat === "Todos" ? PROJECTS : PROJECTS.filter(p=>p.catKey===activeCat);
+    const noun = currentLang==='es' ? (list.length===1?'proyecto':'proyectos') : (list.length===1?'project':'projects');
+    wcCount.textContent = list.length + ' ' + noun;
     workRow.innerHTML = list.map((p) => {
       const idx = PROJECTS.indexOf(p);
+      const t = p[currentLang];
       return `
       <div class="proj-card" data-idx="${idx}">
         <div class="proj-visual" style="background-image:url('${imgSrc(p.images[0])}');"></div>
         <div class="proj-info">
-          <div><div class="cat">${p.category} · ${p.brand}</div><h3>${p.title}</h3></div>
+          <div><div class="cat">${catLabel(p.catKey)} · ${p.brand}</div><h3>${t.title}</h3></div>
           <div class="arrow">→</div>
         </div>
       </div>`;
@@ -1092,12 +1330,18 @@
     mCount.textContent = `${currentImgIdx+1} / ${currentProject.images.length}`;
   }
 
+  function refreshModalText(){
+    if(!currentProject) return;
+    const t = currentProject[currentLang];
+    mCat.textContent = catLabel(currentProject.catKey) + ' · ' + currentProject.brand;
+    mTitle.textContent = t.title;
+    mDesc.textContent = t.description;
+    mTags.innerHTML = currentProject.materials[currentLang].map(m=>`<span>${m}</span>`).join('');
+  }
+
   function openModal(p){
     currentProject = p; currentImgIdx = 0;
-    mCat.textContent = p.category + ' · ' + p.brand;
-    mTitle.textContent = p.title;
-    mDesc.textContent = p.description;
-    mTags.innerHTML = p.materials.map(m=>`<span>${m}</span>`).join('');
+    refreshModalText();
     setModalImage();
     modalOverlay.classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1137,6 +1381,11 @@
     });
   }, {threshold:0.5});
   counters.forEach(c=>counterIo.observe(c));
+
+  // Botones de cambio de idioma
+  [document.getElementById('langToggle'), document.getElementById('langToggle2')].forEach(btn=>{
+    if(btn) btn.addEventListener('click', ()=> setLang(currentLang === 'es' ? 'en' : 'es'));
+  });
 </script>
 
 </body>
