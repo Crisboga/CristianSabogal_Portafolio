@@ -458,6 +458,23 @@
 
   @media (max-width:640px){ .work-row{ grid-template-columns:1fr; } }
 
+
+  /* Marca de agua / aviso Creating Ideas */
+  .proj-visual::after, .modal-img::after{
+    content:'CREATING IDEAS'; position:absolute; left:10px; bottom:9px; z-index:2; pointer-events:none;
+    font:600 9px/1 'Inter',sans-serif; letter-spacing:.2em; color:rgba(20,28,45,.55);
+    background:rgba(255,255,255,.55); padding:4px 8px; border-radius:100px; backdrop-filter:blur(4px);
+  }
+  .modal-img::after{ bottom:14px; left:16px; }
+  .ci-note{
+    display:flex; align-items:center; gap:10px; margin:0 0 26px; padding:12px 16px;
+    border:1px solid var(--line-light); border-left:3px solid var(--accent-pink);
+    border-radius:10px; background:rgba(255,255,255,.03); color:var(--text-light-dim); font-size:13px; line-height:1.5;
+  }
+  .ci-note b{ color:#fff; font-weight:600; }
+  .modal-credit{ margin-top:18px; padding-top:14px; border-top:1px solid var(--line-dark); font-size:12px; color:var(--text-light-dim); }
+  .modal-credit b{ color:#fff; font-weight:600; }
+
   /* ---------------- MODAL ---------------- */
   .modal-overlay{
     position:fixed; inset:0; background:rgba(5,6,10,0.78);
@@ -625,7 +642,40 @@
   .reveal.in{ opacity:1; transform:translateY(0); }
   :focus-visible{ outline:2px solid var(--accent-purple); outline-offset:3px; }
 </style>
-<link rel="stylesheet" href="assets/refresh.css">
+<style id="refresh">
+/* Visual refresh. Project content and interactions live in Preview.html. */
+:root{--bg-dark:#060d16;--bg-dark-2:#101927;--bg-light:#080f19;--bg-light-2:#0b1420;--text-dark:#f2f4fa;--text-dark-dim:#abb6c7;--text-light:#f5f6fa;--text-light-dim:#b0bbcb;--line-light:rgba(172,193,224,.16);--maxw:1520px}
+body{background:#060d16;color:#f2f4fa}
+h1,h2,h3,.display{font-family:'Inter',sans-serif;letter-spacing:-.045em}
+.wrap{padding-inline:clamp(24px,5.2vw,80px)}
+main{padding-top:0}
+section[id],div[id=proceso]{scroll-margin-top:96px}
+.topnav{height:94px;background:rgba(5,12,22,.83);box-shadow:none;padding-inline:5.2vw;border-bottom:1px solid rgba(255,255,255,.08)}
+.topnav-links{gap:26px}.topnav-links a{font-size:12px}
+.cs-btn{font-family:'Inter',sans-serif;font-size:34px;letter-spacing:-.12em;background:none;border:none;padding:0 8px 0 0;font-weight:500}.cs-chevron{font-size:18px;letter-spacing:0}
+.topnav .who b{font-size:11px;letter-spacing:.17em}.topnav .who span{font-size:9px;letter-spacing:.19em;margin-top:6px}
+.hero{min-height:850px;height:100svh;max-height:1100px;isolation:isolate;align-items:center}
+.hero-scene{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-3}
+.hero:after{content:'';position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,9,17,.94) 0%,rgba(3,9,17,.76) 27%,rgba(3,9,17,.18) 52%,transparent 70%),linear-gradient(0deg,#060d16 0%,transparent 17%)}
+.hero>.wrap{width:100%}.hero-grid{display:block;padding:145px 0 60px}.hero-text-col{max-width:600px;width:46%}
+.hero h1{font-size:clamp(44px,4.8vw,74px);font-weight:750;line-height:1.02;letter-spacing:-.055em}
+.hero .eyebrow{letter-spacing:.34em;font-size:11px;margin-bottom:24px}.hero p{max-width:450px;font-size:15px;line-height:1.65;color:#cbd1db}
+.feat-row{margin-top:30px;gap:18px}.feat-item .txt{font-size:11px}.hero-cta{margin-top:32px}.hero-tagline{margin-top:64px;letter-spacing:.18em;font-size:9px;gap:18px}
+.btn{font-weight:500}.about{padding:58px 0;border-bottom:1px solid var(--line-dark)}
+.about-grid{grid-template-columns:1.05fr .7fr 1.3fr;gap:32px;align-items:center}.about h2{font-size:30px}.about p{font-size:13px}.about .eyebrow-sm{margin-bottom:10px}.signature-row{gap:15px;flex-wrap:wrap}
+.profile-photo{width:100%;height:290px;border:0;border-radius:6px;background-image:url('assets/img/hero-proyectos.png');background-size:auto 390px;background-position:62% 42%;box-shadow:inset 0 -35px 40px #080f19}
+.profile-blob{opacity:.2}.process-row{gap:10px}.pstep{padding-right:2px}.pstep p{font-size:11px}.pstep h4{font-family:'Inter',sans-serif;letter-spacing:0}.pstep .circ{background:#101a29;border-color:#7648c2;color:#c5a2ff}.pstep:not(:last-child):after{width:30px;left:42px;background:#45336f}
+.work{padding:64px 0}.work-head{margin-bottom:24px;align-items:end}.work-head p{max-width:650px;margin-bottom:0}.work-head h2{font-size:34px}.work-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.proj-card{border-radius:8px}.proj-visual{height:210px;background-color:#fff}.proj-info{padding:17px 15px}.proj-info h3{font-size:17px;letter-spacing:-.02em}.proj-info .cat{font-size:10px}.filters{gap:8px;margin-bottom:26px}.filter-chip{padding:7px 13px;font-size:11px}
+.ai-section{border-top:1px solid var(--line-dark)}.ai-card{background:#111c2c;border-color:var(--line-light)}.ai-card h3{color:#fff}.ai-card p{color:#abb6c7}.exp-strip{border-top:1px solid var(--line-dark)}
+@media(min-width:1700px){.hero-text-col{width:45%}.hero h1{font-size:78px}}
+@media(max-width:1100px){.topnav-links{gap:14px}.hero{min-height:760px}.hero-text-col{width:54%}.hero h1{font-size:58px}.about-grid{grid-template-columns:1.2fr .8fr}.process-mini{grid-column:1/-1}.process-row{flex-wrap:nowrap}.work-row{grid-template-columns:repeat(3,minmax(0,1fr))}.profile-photo{background-position:63% 40%}}
+@media(max-width:700px){.topnav{height:76px;padding-inline:22px}.topnav .who b{font-size:9px}.topnav .who span{font-size:8px}.topnav-right{gap:8px}.hero{height:auto;min-height:900px;align-items:start}.hero-grid{padding-top:115px;padding-bottom:380px}.hero-text-col{width:100%;max-width:490px}.hero h1{font-size:clamp(39px,9vw,58px)}.hero p{font-size:13px;max-width:370px}.hero-scene{object-fit:cover;object-position:68% bottom;height:500px;top:auto;bottom:0}.hero:after{background:linear-gradient(180deg,#060d16 0%,#060d16 48%,transparent 70%,#060d16 100%)}.hero-tagline{margin-top:28px;font-size:8px;gap:10px}.feat-row{gap:12px}.feat-item .txt{font-size:10px}.hero-cta{margin-top:24px}.about-grid{grid-template-columns:1fr}.profile-wrap{display:none}.process-mini{grid-column:auto;margin-top:18px}.process-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}.pstep:not(:last-child):after{display:none}.work-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.proj-visual{height:160px}.proj-info{padding:13px 10px}.proj-info h3{font-size:14px}.proj-info .arrow{display:none}.work-head h2{font-size:28px}.filters{gap:7px}.filter-chip{font-size:10px;padding:7px 11px}.f-links{flex-wrap:wrap}.modal-overlay{padding:12px}.modal-img{height:260px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* Dedicated portrait from the original About reference. */
+.profile-photo{background-image:url("assets/img/cristian-retrato-original-v3.png");background-size:cover;background-position:65% center}
+
+</style>
 </head>
 <body>
 
@@ -777,6 +827,8 @@
         </div>
       </div>
 
+      <p class="ci-note"><span data-i18n="ci_note">Los proyectos de P.O.P. aquí presentados fueron desarrollados para <b>Creating Ideas</b>.</span></p>
+
       <div class="filters reveal" id="filters"></div>
 
       <div class="work-row" id="workRow"></div>
@@ -797,6 +849,7 @@
         <h3 id="mTitle"></h3>
         <div class="desc" id="mDesc"></div>
         <div class="modal-tags" id="mTags"></div>
+        <div class="modal-credit" data-i18n="ci_credit">Proyecto desarrollado para <b>Creating Ideas</b>.</div>
       </div>
     </div>
   </div>
@@ -932,6 +985,8 @@
       ver_proceso:"Ver proceso completo →",
       work_h2:"Fichas técnicas de proyectos",
       work_p:"Proyectos de diseño P.O.P. y retail desarrollados para marcas líderes de consumo masivo y del sector licorero. Haz clic en cualquiera para ver la ficha completa.",
+      ci_note:"Los proyectos de P.O.P. aquí presentados fueron desarrollados para <b>Creating Ideas</b>.",
+      ci_credit:"Proyecto desarrollado para <b>Creating Ideas</b>.",
       ai_h2:"Explorando diseño + inteligencia artificial",
       ai_p:"Además del P.O.P., actualmente estoy desarrollando cuatro aplicaciones que combinan mi criterio de diseño industrial con IA, para resolver problemas reales del día a día en producción y accesibilidad.",
       ai_status:"EN DESARROLLO",
@@ -978,6 +1033,8 @@
       ver_proceso:"See full process →",
       work_h2:"Project technical sheets",
       work_p:"P.O.P. and retail design projects developed for leading mass-consumption and liquor-sector brands. Click any of them to see the full technical sheet.",
+      ci_note:"The P.O.P. projects shown here were developed for <b>Creating Ideas</b>.",
+      ci_credit:"Project developed for <b>Creating Ideas</b>.",
       ai_h2:"Exploring design + artificial intelligence",
       ai_p:"Beyond P.O.P., I'm currently developing four applications that combine my industrial design judgment with AI, to solve real day-to-day problems in production and accessibility.",
       ai_status:"IN DEVELOPMENT",
