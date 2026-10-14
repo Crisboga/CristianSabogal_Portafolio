@@ -675,6 +675,17 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
 /* Dedicated portrait from the original About reference. */
 .profile-photo{background-image:url("assets/img/cristian-retrato-original-v3.png");background-size:cover;background-position:65% center}
 
+/* About: foto integrada como fondo (cristian-espaldas) */
+.about{position:relative;isolation:isolate;overflow:hidden;padding:150px 0 140px}
+.about:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/img/cristian-espaldas.png') 22% 20%/cover no-repeat;
+ -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%)}
+.about:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,13,22,.93) 0%,rgba(6,13,22,.74) 28%,rgba(6,13,22,.08) 44%,rgba(6,13,22,.55) 55%,rgba(6,13,22,.9) 66%,rgba(6,13,22,.95) 100%)}
+.profile-photo{background:none!important;box-shadow:none;height:260px}
+.profile-blob{display:none}
+.about .pstep p{color:#d3dbe8}.about .pstep h4{color:#fff}.about .process-mini h3,.about .process-mini .eyebrow-sm{text-shadow:0 1px 10px rgba(0,0,0,.6)}
+@media(max-width:1100px){.about:before{background-position:30% 30%}.about:after{background:linear-gradient(90deg,rgba(6,13,22,.9) 0%,rgba(6,13,22,.6) 45%,rgba(6,13,22,.9) 100%)}.profile-photo{height:200px}}
+@media(max-width:700px){.about{padding:64px 0}.about:before{background-position:36% top;background-size:auto 340px;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%)}.about:after{background:linear-gradient(180deg,rgba(6,13,22,.15) 0,rgba(6,13,22,.55) 160px,#060d16 340px)}.about-grid{padding-top:230px}}
+
 </style>
 </head>
 <body>
