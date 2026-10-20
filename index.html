@@ -469,12 +469,6 @@
     background:rgba(255,255,255,.55); padding:4px 8px; border-radius:100px; backdrop-filter:blur(4px);
   }
   .modal-img::after{ bottom:14px; left:16px; }
-  .ci-note{
-    display:flex; align-items:center; gap:10px; margin:0 0 26px; padding:12px 16px;
-    border:1px solid var(--line-light); border-left:3px solid var(--accent-pink);
-    border-radius:10px; background:rgba(255,255,255,.03); color:var(--text-light-dim); font-size:13px; line-height:1.5;
-  }
-  .ci-note b{ color:#fff; font-weight:600; }
   .modal-credit{ margin-top:18px; padding-top:14px; border-top:1px solid var(--line-dark); font-size:12px; color:var(--text-light-dim); }
   .modal-credit b{ color:#fff; font-weight:600; }
 
@@ -680,12 +674,16 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
 
 /* About: foto integrada como fondo (cristian-espaldas) */
 .about{position:relative;isolation:isolate;overflow:hidden;padding:150px 0 140px}
-.about:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/img/cristian-espaldas.png') 22% 20%/cover no-repeat;
+.about:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/img/cristian-espaldas.png') 22% 46%/cover no-repeat;
  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%)}
 .about:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,13,22,.93) 0%,rgba(6,13,22,.74) 28%,rgba(6,13,22,.08) 44%,rgba(6,13,22,.55) 55%,rgba(6,13,22,.9) 66%,rgba(6,13,22,.95) 100%)}
 .profile-photo{background:none!important;box-shadow:none;height:260px}
 .profile-blob{display:none}
 .about .pstep p{color:#d3dbe8}.about .pstep h4{color:#fff}.about .process-mini h3,.about .process-mini .eyebrow-sm{text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* About en pantallas muy anchas: la foto se limita a 1600px de ancho, centrada, para que no se recorte la cara */
+.about:before,.about:after{right:auto;left:50%;width:min(100%,1600px);transform:translateX(-50%)}
+@media(min-width:1601px){.about:before{-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%),linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(180deg,transparent 0,#000 22%,#000 78%,transparent 100%),linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-composite:intersect}.about:after{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 10%,#000 90%,transparent 100%)}}
 @media(max-width:1100px){.about:before{background-position:30% 30%}.about:after{background:linear-gradient(90deg,rgba(6,13,22,.9) 0%,rgba(6,13,22,.6) 45%,rgba(6,13,22,.9) 100%)}.profile-photo{height:200px}}
 @media(max-width:700px){.about{padding:64px 0}.about:before{background-position:36% top;background-size:auto 340px;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 55%,transparent 100%)}.about:after{background:linear-gradient(180deg,rgba(6,13,22,.15) 0,rgba(6,13,22,.55) 160px,#060d16 340px)}.about-grid{padding-top:230px}}
 
@@ -693,8 +691,8 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
 
 /* Fondo de proyecto (opción 6): la misma imagen ampliada y difuminada rellena las zonas vacías */
 .proj-visual,.modal-img{background:#0b1420!important;overflow:hidden}
-.pv-slide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
-.pv-slide.on{opacity:1}
+.pv-slide{position:absolute;inset:0;opacity:0;transform:scale(1.07);transition:opacity .8s ease,transform 3.6s ease-out}
+.pv-slide.on{opacity:1;transform:scale(1)}
 .pv-blur,.m-blur{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(22px) brightness(.62) saturate(1.2);transform:scale(1.5)}
 .pv-img,.m-sharp{position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center}
 .m-blur,.m-sharp{transition:opacity .35s ease}
@@ -703,7 +701,7 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
 .pv-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);transition:background .3s ease,transform .3s ease}
 .pv-dots i.on{background:#fff;transform:scale(1.3)}
 .proj-visual::after{z-index:3}
-@media(prefers-reduced-motion:reduce){.pv-slide{transition:none}}
+@media(prefers-reduced-motion:reduce){.pv-slide{transition:none;transform:none}}
 </style>
 </head>
 <body>
@@ -854,8 +852,6 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
           <span class="wc-count" id="wcCount">25 proyectos</span>
         </div>
       </div>
-
-      <p class="ci-note"><span data-i18n="ci_note">Los proyectos de P.O.P. aquí presentados fueron desarrollados para <b>Creating Ideas</b>.</span></p>
 
       <div class="filters reveal" id="filters"></div>
 
@@ -1014,7 +1010,6 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
       ver_proceso:"Ver proceso completo →",
       work_h2:"Fichas técnicas de proyectos",
       work_p:"Proyectos de diseño P.O.P. y retail desarrollados para marcas líderes de consumo masivo y del sector licorero. Haz clic en cualquiera para ver la ficha completa.",
-      ci_note:"Los proyectos de P.O.P. aquí presentados fueron desarrollados para <b>Creating Ideas</b>.",
       ci_credit:"Proyecto desarrollado para <b>Creating Ideas</b>.",
       ai_h2:"Explorando diseño + inteligencia artificial",
       ai_p:"Además del P.O.P., actualmente estoy desarrollando cuatro aplicaciones que combinan mi criterio de diseño industrial con IA, para resolver problemas reales del día a día en producción y accesibilidad.",
@@ -1062,7 +1057,6 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
       ver_proceso:"See full process →",
       work_h2:"Project technical sheets",
       work_p:"P.O.P. and retail design projects developed for leading mass-consumption and liquor-sector brands. Click any of them to see the full technical sheet.",
-      ci_note:"The P.O.P. projects shown here were developed for <b>Creating Ideas</b>.",
       ci_credit:"Project developed for <b>Creating Ideas</b>.",
       ai_h2:"Exploring design + artificial intelligence",
       ai_p:"Beyond P.O.P., I'm currently developing four applications that combine my industrial design judgment with AI, to solve real day-to-day problems in production and accessibility.",
@@ -1354,7 +1348,7 @@ section[id],div[id=proceso]{scroll-margin-top:96px}
           };
           pre.src = src;
         }
-        rotTimers.push(setTimeout(tick, 3200));
+        rotTimers.push(setTimeout(tick, 2800));
       };
       rotTimers.push(setTimeout(tick, 1800 + (n % 8) * 450));
     });
